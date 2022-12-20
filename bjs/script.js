@@ -17,13 +17,23 @@ document.getElementById('btnRetry').addEventListener('click', function () {
     orderNumber = 0;
 })
 
+let phrasesOver = [
+    'Вы загадали неправильное число!\n\u{1F914}',
+    'Я сдаюсь..\n\u{1F92F}',
+    `Число не может быть больше\n\u{1F92F}`,
+  ];
+  
+  function getRandomElementOver (){
+  let randIndexOver = Math.floor(Math.random() * phrasesOver.length);
+  console.log(randIndexOver);
+  return(phrasesOver[randIndexOver]);
+  }
+
 document.getElementById('btnOver').addEventListener('click', function () {
     if (gameRun){
         if (minValue === maxValue){
-            const phraseRandom = Math.round( Math.random());
-            const answerPhrase = (phraseRandom === 1) ?
-                `Вы загадали неправильное число!\n\u{1F914}` :
-                `Я сдаюсь..\n\u{1F92F}`;
+            const phraseRandom = Math.floor(Math.random() * phrasesOver.length);
+            const answerPhrase = getRandomElementOver(phrasesOver)
 
             answerField.innerText = answerPhrase;
             gameRun = false;
@@ -37,14 +47,24 @@ document.getElementById('btnOver').addEventListener('click', function () {
     }
 })
 
+
+let phrases = [
+    'Вы загадали неправильное число!\n\u{1F914}',
+    'Я сдаюсь..\n\u{1F92F}',
+    'число не может быть меньше',
+  ];
+  
+  function getRandomElement (){
+  let randIndex = Math.floor(Math.random() * phrases.length);
+  console.log(randIndex);
+  return(phrases[randIndex]);
+  }
+
 document.getElementById('btnLess').addEventListener('click', function () {
     if (gameRun){
         if (maxValue === minValue){
-            const phraseRandom = Math.round( Math.random());
-            const answerPhrase = (phraseRandom === 1) ?
-                `Вы загадали неправильное число!\n\u{1F914}` :
-                `Я сдаюсь..\n\u{1F92F}`;
-
+            const phraseRandom = Math.floor(Math.random() * phrases.length);;
+            const answerPhrase = getRandomElement(phrases);
             answerField.innerText = answerPhrase;
             gameRun = false;
         } else {
