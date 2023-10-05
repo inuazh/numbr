@@ -1,5 +1,35 @@
-let minValue = parseInt(prompt('Минимальное знание числа для игры', '0')) || 0;
-let maxValue = parseInt(prompt('Максимальное знание числа для игры', '100')) || 100;
+let minValue = parseInt(prompt('Минимальное знание числа для игры', '0'));
+let minValueValue = minValue;
+let maxValue = parseInt(prompt('Максимальное знание числа для игры', '100'));
+let maxValueValue = maxValue;
+
+
+if (minValue > maxValue) {
+    alert('Ошибка: Минимальное значение не может быть больше максимального.');
+} else {
+    if (isNaN(minValue)) {
+        true;
+        minValue = (0);
+        minValue == minValue;
+    } else {
+        false;
+        minValue == minValueValue;
+    }
+    
+    if (isNaN(maxValue)) {
+        true;
+        maxValue = (100)
+        maxValue == maxValue;
+    } else {
+        false;
+        maxValue == maxValueValue;
+    }
+
+    
+}
+
+
+
 
 const maxV = maxValue > 999 ? 999 : maxValue;
 const minV = minValue < -999 ? -999 : minValue;
